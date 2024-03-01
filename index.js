@@ -5,12 +5,9 @@ let todos = JSON.parse(localStorage.getItem('todos')) || []
 addToDoButton.addEventListener('click', addToDo)
 
 function addToDo() {
-    if (!textInput.value) {
-        return
-    } else {
-        const todo = {
-            text: textInput.value
-        }
+    if (!textInput.value) return
+    else {
+        const todo = { text: textInput.value }
         todos.push(todo)
         textInput.value = ''
         displayToDos()
@@ -25,9 +22,7 @@ function saveToLocalStorage() {
 function displayToDos() {
     todoContainer.innerHTML = ''
     todos.forEach((todo, index) => {
-        //set id key on object
         todo.id = index
-        
         const newToDoElement = document.createElement('div')
         newToDoElement.classList.add('todo__element')
         newToDoElement.setAttribute("id", `${index}`)
