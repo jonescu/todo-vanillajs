@@ -25,7 +25,9 @@ function saveToLocalStorage() {
 function displayToDos() {
     todoContainer.innerHTML = ''
     todos.forEach((todo, index) => {
+        //set id key on object
         todo.id = index
+        
         const newToDoElement = document.createElement('div')
         newToDoElement.classList.add('todo__element')
         newToDoElement.setAttribute("id", `${index}`)
